@@ -49,4 +49,40 @@ class TestGreetingService {
 		Assertions.assertEquals(expected, actual);
 	}
 
+	@Test
+	void testGreetForValidNameAndCity() {
+		String expected = "Hello Vinod, how's weather in Bangalore?";
+		String actual = service.greet("Vinod", "Bangalore");
+		Assertions.assertEquals(expected, actual);
+	}
+
+	@Test
+	void testGreetForValidNameAndNullCity() {
+		String expected = "Hello Vinod, how's weather in your city?";
+		String actual = service.greet("Vinod", null);
+		Assertions.assertEquals(expected, actual);
+	}
+
+	@Test
+	void testGreetForValidNameAndEmptyCity() {
+		String expected = "Hello Vinod, how's weather in your city?";
+		String actual = service.greet("Vinod", "");
+		Assertions.assertEquals(expected, actual);
+	}
+
+	@Test
+	void testGreetForEmmptyNameAndEmptyCity() {
+		String expected = "Hello friend, how's weather in your city?";
+		String actual = service.greet("", "");
+		Assertions.assertEquals(expected, actual);
+	}
+
+	@Test
+	void testGreetForEmmptyNameAndValidCity() {
+		String expected = "Hello friend, how's weather in Bangalore?";
+		String actual = service.greet("", "Bangalore");
+		Assertions.assertEquals(expected, actual);
+	}
+
+
 }
