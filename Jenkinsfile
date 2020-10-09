@@ -3,9 +3,7 @@ pipeline{
     agent any
     
     tools {
-        
         maven 'Maven'
-        docker 'docker'
     }
 
     stages {
@@ -22,6 +20,7 @@ pipeline{
         }
 
         stage("build") {
+            
             when {
                 branch "main"
             }
