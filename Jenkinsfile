@@ -37,5 +37,12 @@ pipeline{
                 }
             }
         }
+        stage("docker-run") {
+            steps {
+                script {
+                    dockerImage = docker.build registry + ":latest"
+                }
+            }
+        }
     }
 }
