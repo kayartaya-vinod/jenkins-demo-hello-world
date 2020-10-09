@@ -1,6 +1,12 @@
 pipeline{
     
     agent any
+
+    environment {
+        registry = "learnwithvinod/hello-world"
+        registryCredentials = "dockerhub_id"
+        dockerImage = ""
+    }
     
     tools {
         maven 'Maven'
@@ -27,7 +33,7 @@ pipeline{
         stage("docker-image") {
             steps {
                 script {
-                    docker.build "learnwithvinod/hello-world"
+                    dockerImage = docker.build registry + ":latest"
                 }
             }
         }
