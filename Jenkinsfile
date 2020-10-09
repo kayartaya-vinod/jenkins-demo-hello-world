@@ -26,6 +26,14 @@ pipeline{
             }
             steps {
                 sh "mvn package -DskipTests"
+            }
+        }
+        stage("docker-image") {
+            
+            when {
+                branch "main"
+            }
+            steps {
                 script {
                     docker.build "learnwithvinod/hello-world"
                 }
