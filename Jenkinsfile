@@ -26,9 +26,8 @@ pipeline{
             }
             steps {
                 sh "mvn package -DskipTests"
+                docker.build "learnwithvinod/hello-world"
             }
-
-
         }
     }
 }
