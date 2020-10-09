@@ -22,7 +22,7 @@ public class GreetingService {
 	}
 
 	public String greet(String name, String city) {
-		String msg = "Hello %s, how's wheather in %s?";
+		String msg = "Hello %s, how's weather in %s?";
 		if (name == null || name.trim().length() == 0) {
 			name = "friend";
 		}
