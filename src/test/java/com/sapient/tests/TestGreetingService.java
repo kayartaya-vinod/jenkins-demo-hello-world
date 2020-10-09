@@ -31,7 +31,7 @@ class TestGreetingService {
 	@Test
 	void testGreetForValidName() {
 		String actual = service.greet("Vinod");
-		String expected = "Hello, Vinod!";
+		String expected = "Hello, Kumar!";
 		Assertions.assertEquals(expected, actual);
 	}
 
